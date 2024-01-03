@@ -87,14 +87,30 @@ array3d[2,,1]
 array3d[,3,2]
 array3d[2,2,]
 
+# List and Data Frames
+HSPA1A <- list(gene = "HSPA1A",amino.acids = 641, nucleotides = 2400)
+print(HSPA1A)
 
+# Let's pull out just the amino acids
+HSPA1A$amino.acids
 
+# Let's create three(3) lists and combine them into data frames
+gene <- c("HSPA4", "HSPA5", "HSPA8", 'HSPA9', 'HSPA1A', "HSPA1B")
 
+nucleotides <- c(54537, 6491, 4648, 21646, 2400, 2517)
 
+aminoAcids <- c(840, 654, 493, 679, 641, 641)
 
+HSPs <- data.frame(gene, nucleotides, aminoAcids)
 
+# Let's pull out just the genes
+HSPs$genes
 
+# Let's pull out just the nucleotides
+HSPs$nucleotides
 
+# Let's search for a specific gene
+HSPs$aminoAcids[HSPs$gene == "HSPA8"]
 
 
 
