@@ -173,3 +173,25 @@ ncol(dataset)
 petals.lm <- lm(formula = Petal.Length ~ Petal.Width, data = dataset)
 petals.lm
 summary(petals.lm)
+
+# CHARTS AND GRAPHS
+names(iris)
+
+
+hist(iris$Sepal.Length)
+
+# Let's increase the number of bins in our histogram
+hist(iris$Sepal.Length, breaks = 25)
+
+# Let's add some labels
+hist(iris$Sepal.Length, breaks = 25, xlab="Sepal Length", main = "Sepal Length Frequency")
+
+plot(iris$Sepal.Length ~ iris$Sepal.Width, xlab = "Sepal Length", ylab = "Sepal Width")
+
+library(lattice)
+
+# Let's use the lattice dotplot
+dotplot(Sepal.Width ~ Sepal.Length|Species, data = iris)
+
+# Let's use the lattice dotplot to look at petal length vs width
+dotplot(Petal.Length ~ Petal.Width|Species, data = dataset)
