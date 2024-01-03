@@ -58,14 +58,34 @@ log(12,4)
 ?exp
 
 # DATA STRUCTURES
+
+# Let's start with the array function
 months <- array(c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), dim = c(3,4) )
+months[2,3]
+months[2, ]
+months[,2]
+# Compare it to a simple list function
+months1 <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
+months1
 
+# Let's now look at a matrix
+months2 = matrix(data = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), nrow = 3, ncol = 4)
 
+months2
 
+# making a 3d array
+array3d <- array(data = c(2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36), dim = c(3,3,2))
 
+array3d
 
+array3d[1,3,2]
+array3d[,3,2]
 
+# If you want to pull an entire row or col
+array3d[2,,1]
+array3d[,3,2]
+array3d[2,2,]
 
 
 
