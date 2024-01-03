@@ -56,3 +56,34 @@ log(x=12, base = 4)
 log(12,4)
 
 ?exp
+
+# DATA STRUCTURES
+months <- array(c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), dim = c(3,4) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
