@@ -149,3 +149,27 @@ a = TRUE
 class(a)
 
 class(exampleFunction)
+
+# MODELS AND FORMULAS
+# y ~ x1 + x2
+
+dataset <- iris
+
+# Let's look at the top few rows
+head(dataset)
+
+# Let's look at the bottom few rows
+tail(dataset)
+
+dataset
+
+# Let's look at the total number of rows in our dataset
+nrow(dataset)
+
+# Let's look at the total number of columns in our dataset
+ncol(dataset)
+
+# Let's start a simple linear model
+petals.lm <- lm(formula = Petal.Length ~ Petal.Width, data = dataset)
+petals.lm
+summary(petals.lm)
