@@ -112,14 +112,40 @@ HSPs$nucleotides
 # Let's search for a specific gene
 HSPs$aminoAcids[HSPs$gene == "HSPA8"]
 
+# OBJECT CLASSES
 
+print(gene)
+print(HSPs)
 
+class(HSPs$gene)
+class(HSPs$nucleotides)
+class(HSPs$aminoAcids)
 
+x <- 15+ 38
+x
+class(x)
 
+z = as.character(c(1,2,3,4,5,6))
+z
 
+class(z)
 
+y <- as.character(c(9,8,7,6,5,4,3,2,1))
+y + z
 
+z2 <- c(1,2,3,4,5,6) 
+y2 <- c(9,8,7,6,5,4)
 
+z2 + y2
 
+class(z2)
 
+class(HSPs)
 
+y = as.numeric(y)
+class(y)
+
+a = TRUE
+class(a)
+
+class(exampleFunction)
