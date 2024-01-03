@@ -1,4 +1,4 @@
-# Simple Operations
+# SIMPLE OPERATION
 
 
 ## This is how R does addition
@@ -30,3 +30,29 @@ days[c(1,2,5,7)]
 weekdays = days[1:5]
 
 print(weekdays)
+
+# FUNCTIONS
+## f (argument1, argument2, ...)
+## where f is the name of the function, and argument1, 2 etc are the
+## different conditions we are asking our function to evaluate
+
+exampleFunction <- function(x,y) {
+  vec = c(x+ 1, y + 10)
+  return(vec)
+}
+
+exampleFunction(10, 10)
+
+# Example built-in functions
+exp(2)
+
+# tangents
+tan(2)
+
+# log(12)
+log(12)
+
+log(x=12, base = 4)
+log(12,4)
+
+?exp
