@@ -78,3 +78,14 @@ Hyperlinks can also be incorporated into these files. This is especially useful 
 
 [RMarkdown](http://rmarkdown.rstudio.com/)
 
+## Formulas
+
+We can also put nice formatted formulas into r markdown using two dollar signs
+
+$$p^2 + 2pq + q^2 = 1$$
+
+And you can get really complex as well
+
+$$\Theta = \begin{pmatrix}\alpha and \beta\\
+\gamma & \delta
+\end{pmatrix}$$
