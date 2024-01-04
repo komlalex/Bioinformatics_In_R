@@ -1,8 +1,11 @@
 ---
 title: "HTML_Tutorial"
-author: "komlalex"
+author: "Kunyelewosi Alexander"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
 This is a tutorial on how to use rmarkdown for reproducible research
@@ -15,3 +18,19 @@ Below is a code chunk
 
 ```{r}
 ToothData <- ToothGrowth
+head(ToothData)
+```
+
+As you can see, from the running the "play" button of the code chunk, the the results are printed inline of the r markdown
+
+```{r}
+fit <- lm(len ~ dose, data=ToothData)
+
+b <- fit$coefficients
+ 
+plot(len ~ dose, data = ToothData)
+
+abline(lm(len ~ dose, data = ToothData))
+```
+
+The slope of our regression line is `r b[2]`.
