@@ -91,7 +91,8 @@ $$\Theta = \begin{pmatrix}\alpha & \beta\\
 \gamma & \delta
 \end{pmatrix}$$
 
-Code chunk options
+# Code Chunks {.tabset}
+## Code chunk options 
 There are also options for your r markdown file on how knitr interprets the code chunk. There are the following options:
 
 Eval (T or F): whether or not to evaluate the code chunk
@@ -112,4 +113,18 @@ print("Hello World")
 
 ## Table of contents
 
-We can add a table of contents to our HTML document. We do this by altering the YAML code (the weird code chunk at the very top of the document)
+We can add a table of contents to our HTML document. We do this by altering the YAML code (the weird code chunk at the very top of the document). We can add this:
+
+title: "HTML_Tutorial"
+author: "Kunyelewosi Alexander"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+  
+This will give us a very nice floating table of contents on the left hand side of the document.
+
+## Tabs
+
+We can also add tabs in our report. To do this you need to specify each section that you want to become a tab by placing "{.tabset}" after the line. Every subsequent heade will be a new tab.

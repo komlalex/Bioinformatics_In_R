@@ -1592,9 +1592,14 @@ dollar signs</p>
 \beta\\
 \gamma &amp; \delta
 \end{pmatrix}\]</span></p>
-<p>Code chunk options There are also options for your r markdown file on
-how knitr interprets the code chunk. There are the following
-options:</p>
+</div>
+</div>
+<div id="code-chunks" class="section level1 tabset">
+<h1 class="tabset">Code Chunks</h1>
+<div id="code-chunk-options" class="section level2">
+<h2>Code chunk options</h2>
+<p>There are also options for your r markdown file on how knitr
+interprets the code chunk. There are the following options:</p>
 <p>Eval (T or F): whether or not to evaluate the code chunk</p>
 <p>Eco (T or F): whether or not to show the code for the chunk, but
 results will print.</p>
@@ -1612,7 +1617,17 @@ document.</p>
 <h2>Table of contents</h2>
 <p>We can add a table of contents to our HTML document. We do this by
 altering the YAML code (the weird code chunk at the very top of the
-document)</p>
+document). We can add this:</p>
+<p>title: “HTML_Tutorial” author: “Kunyelewosi Alexander” date:
+“2024-01-04” output: html_document: toc: true toc_float: true</p>
+<p>This will give us a very nice floating table of contents on the left
+hand side of the document.</p>
+</div>
+<div id="tabs" class="section level2">
+<h2>Tabs</h2>
+<p>We can also add tabs in our report. To do this you need to specify
+each section that you want to become a tab by placing “{.tabset}” after
+the line. Every subsequent heade will be a new tab.</p>
 </div>
 </div>
 
