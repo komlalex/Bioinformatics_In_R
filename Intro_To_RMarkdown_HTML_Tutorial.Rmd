@@ -44,3 +44,12 @@ We can also put sections and subsections in our r markdown file, similar to numb
 ### Third level header
 
 Make sure that you put space after the "#", otherwise, it will not work
+
+We can also add bullet point-type marks in our r markdown file
+
+- one item
+- one item
+- one item
+  - one more item
+  - one more item
+  - one more item
