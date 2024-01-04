@@ -23,7 +23,7 @@ head(ToothData)
 
 As you can see, from the running the "play" button of the code chunk, the the results are printed inline of the r markdown
 
-```{r}
+```{r, fig.cap="Figure 1: The tooth growth of Guinea Pigs agaist vitamin dose"  }
 fit <- lm(len ~ dose, data=ToothData)
 
 b <- fit$coefficients
@@ -86,6 +86,25 @@ $$p^2 + 2pq + q^2 = 1$$
 
 And you can get really complex as well
 
-$$\Theta = \begin{pmatrix}\alpha and \beta\\
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
 \gamma & \delta
 \end{pmatrix}$$
+
+Code chunk options
+There are also options for your r markdown file on how knitr interprets the code chunk. There are the following options:
+
+Eval (T or F): whether or not to evaluate the code chunk
+
+Eco (T or F): whether or not to show the code for the chunk, but results will print.
+
+Cache: If you enable, the same code chunk will not be evaluated the next time that the knitr is run. Great for code that has long runtimes.
+
+fig.width or fig.height: the (graphical device) size of the r plots in inches. The figures are first written to the knitr document and then to files that are seperately. 
+
+out.width or out.height: The output size of the r plots in the r document.
+
+fig.cap: the words for the figure caption
+
+```{r echo=F, eval=F }
+print("Hello World")
+```
