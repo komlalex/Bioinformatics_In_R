@@ -34,3 +34,13 @@ abline(lm(len ~ dose, data = ToothData))
 ```
 
 The slope of our regression line is `r b[2]`.
+
+# Setion Headers
+
+We can also put sections and subsections in our r markdown file, similar to numbers or bullet points in a word document. This is done with the "#" that we previously used to denote ext in R script
+
+# First level header
+## Second level header
+### Third level header
+
+Make sure that you put space after the "#", otherwise, it will not work
