@@ -53,3 +53,28 @@ We can also add bullet point-type marks in our r markdown file
   - one more item
   - one more item
   - one more item
+    - one last
+
+It's important to note here that in R Markdown, indentation matters!
+
+1. First Item
+2. Second Item
+3. Third Item
+  a. Sub Item 1
+  b. Sub Item 2
+  c. Sub Item 3
+
+## Block Quotes
+
+We can really put nice quotes into the markdown document. We do this using the ">" symbol.
+
+> "Genes are like the story, and DNA is the language that the story is written in."
+>
+> ---Sam Kean
+ 
+## Hyperlinks
+
+Hyperlinks can also be incorporated into these files. This is especially useful in HTML files, since they are in a web browser and will direct the reader to the material that you are interested in showing them. Here, we will used the link to R Markdown's homepage for this example
+
+[RMarkdown](http://rmarkdown.rstudio.com/)
+
