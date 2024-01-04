@@ -3,9 +3,10 @@ title: "HTML_Tutorial"
 author: "Kunyelewosi Alexander"
 date: "`r Sys.Date()`"
 output:
-  html_document: default
-  word_document: default
-  pdf_document: default
+  html_document:
+    toc: true
+    toc_float: true
+  
 ---
 
 This is a tutorial on how to use rmarkdown for reproducible research
@@ -108,3 +109,7 @@ fig.cap: the words for the figure caption
 ```{r echo=F, eval=F }
 print("Hello World")
 ```
+
+## Table of contents
+
+We can add a table of contents to our HTML document. We do this by altering the YAML code (the weird code chunk at the very top of the document)
