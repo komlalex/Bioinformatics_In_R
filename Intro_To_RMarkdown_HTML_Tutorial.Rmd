@@ -6,6 +6,9 @@ output:
   html_document:
     toc: true
     toc_float: true
+    theme: sandstone
+    highlight: tango
+    code_folding: hide
   
 ---
 
@@ -127,4 +130,42 @@ This will give us a very nice floating table of contents on the left hand side o
 
 ## Tabs
 
-We can also add tabs in our report. To do this you need to specify each section that you want to become a tab by placing "{.tabset}" after the line. Every subsequent heade will be a new tab.
+We can also add tabs in our report. To do this you need to specify each section that you want to become a tab by placing "{.tabset}" after the line. Every subsequent header will be a new tab.
+
+## Themes
+
+You can add themes to your HTML document that change the highlighting  color and hyperlink color of your html output. This can be nice aesthetically. To do this, you change the YAML to one of the following;
+
+- cerulean
+- journal 
+- flatly
+- cosmo
+- united
+- spacelab
+- lumen
+- paper
+- sandstone
+- simplex
+- yeti
+- null
+
+You can also change the color by specifying highlights:
+- default
+- tango
+- payments
+- kate 
+- nanochrome
+- espresso
+- zenburn
+- haddock
+- textmate
+
+## Code Folding
+
+You can also use the cod_folding option to allow  the reader to toggle between displaying the code and hiding the code. This done with:
+
+code_folding: hide
+
+## Summary
+
+There are a ton of options and ways for you to customize your r code using the HTML format. This is a great way to display a "portfolio" of your work if you are trying to market yourself to interested parties.
