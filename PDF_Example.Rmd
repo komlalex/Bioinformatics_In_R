@@ -1,0 +1,171 @@
+---
+title: "PDF_Example"
+author: "komlalex"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+This is a tutorial on how to use rmarkdown for reproducible research
+
+Here we an type long passages or descriptions for our data without the need of "hashing" out our comments with the # symbol. In our first example, we will be using the ToothGrowth dataset. In this experiment, Guinea Pigs (literal) were given different amounts of Vitamin C to see the effect on the growth rate of the animal's teeth.
+
+To run R code in a markdown file, we need to denogte the section that is considered R code. We call these "code chunks"
+
+Below is a code chunk
+
+```{r}
+ToothData <- ToothGrowth
+head(ToothData)
+```
+
+As you can see, from the running the "play" button of the code chunk, the the results are printed inline of the r markdown
+
+```{r, fig.cap="Figure 1: The tooth growth of Guinea Pigs agaist vitamin dose"  }
+fit <- lm(len ~ dose, data=ToothData)
+
+b <- fit$coefficients
+ 
+plot(len ~ dose, data = ToothData)
+
+abline(lm(len ~ dose, data = ToothData))
+```
+
+The slope of our regression line is `r b[2]`.
+
+# Setion Headers
+
+We can also put sections and subsections in our r markdown file, similar to numbers or bullet points in a word document. This is done with the "#" that we previously used to denote ext in R script
+
+# First level header
+## Second level header
+### Third level header
+
+Make sure that you put space after the "#", otherwise, it will not work
+
+We can also add bullet point-type marks in our r markdown file
+
+- one item
+- one item
+- one item
+  - one more item
+  - one more item
+  - one more item
+    - one last
+
+It's important to note here that in R Markdown, indentation matters!
+
+1. First Item
+2. Second Item
+3. Third Item
+  a. Sub Item 1
+  b. Sub Item 2
+  c. Sub Item 3
+
+## Block Quotes
+
+We can really put nice quotes into the markdown document. We do this using the ">" symbol.
+
+> "Genes are like the story, and DNA is the language that the story is written in."
+>
+> ---Sam Kean
+ 
+## Hyperlinks
+
+Hyperlinks can also be incorporated into these files. This is especially useful in HTML files, since they are in a web browser and will direct the reader to the material that you are interested in showing them. Here, we will used the link to R Markdown's homepage for this example
+
+[RMarkdown](http://rmarkdown.rstudio.com/)
+
+## Formulas
+
+We can also put nice formatted formulas into r markdown using two dollar signs
+
+$$p^2 + 2pq + q^2 = 1$$
+
+And you can get really complex as well
+
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+
+# Code Chunks {.tabset}
+## Code chunk options 
+There are also options for your r markdown file on how knitr interprets the code chunk. There are the following options:
+
+Eval (T or F): whether or not to evaluate the code chunk
+
+Eco (T or F): whether or not to show the code for the chunk, but results will print.
+
+Cache: If you enable, the same code chunk will not be evaluated the next time that the knitr is run. Great for code that has long runtimes.
+
+fig.width or fig.height: the (graphical device) size of the r plots in inches. The figures are first written to the knitr document and then to files that are seperately. 
+
+out.width or out.height: The output size of the r plots in the r document.
+
+fig.cap: the words for the figure caption
+
+```{r echo=F, eval=F }
+print("Hello World")
+```
+
+## Table of contents
+
+We can add a table of contents to our HTML document. We do this by altering the YAML code (the weird code chunk at the very top of the document). We can add this:
+
+title: "HTML_Tutorial"
+author: "Kunyelewosi Alexander"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+  
+This will give us a very nice floating table of contents on the left hand side of the document.
+
+## Tabs
+
+We can also add tabs in our report. To do this you need to specify each section that you want to become a tab by placing "{.tabset}" after the line. Every subsequent header will be a new tab.
+
+## Themes
+
+You can add themes to your HTML document that change the highlighting  color and hyperlink color of your html output. This can be nice aesthetically. To do this, you change the YAML to one of the following;
+
+- cerulean
+- journal 
+- flatly
+- cosmo
+- united
+- spacelab
+- lumen
+- paper
+- sandstone
+- simplex
+- yeti
+- null
+
+You can also change the color by specifying highlights:
+- default
+- tango
+- payments
+- kate 
+- nanochrome
+- espresso
+- zenburn
+- haddock
+- textmate
+
+## Code Folding
+
+You can also use the cod_folding option to allow  the reader to toggle between displaying the code and hiding the code. This done with:
+
+code_folding: hide
+
+## Summary
+
+There are a ton of options and ways for you to customize your r code using the HTML format. This is a great way to display a "portfolio" of your work if you are trying to market yourself to interested parties.
+
+# RPUBS
+
+RPUBS is an easy web publishing platform from R
+1. Create an account
+2. Knit your code
+3. At the top right of your output HTML, click publish and follow the prompt
