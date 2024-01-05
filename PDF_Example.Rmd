@@ -2,14 +2,14 @@
 title: "PDF_Example"
 author: "komlalex"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: word_document
 ---
 
 This is a tutorial on how to use rmarkdown for reproducible research
 
 Here we an type long passages or descriptions for our data without the need of "hashing" out our comments with the # symbol. In our first example, we will be using the ToothGrowth dataset. In this experiment, Guinea Pigs (literal) were given different amounts of Vitamin C to see the effect on the growth rate of the animal's teeth.
 
-To run R code in a markdown file, we need to denogte the section that is considered R code. We call these "code chunks"
+To run R code in a markdown file, we need to denote the section that is considered R code. We call these "code chunks"
 
 Below is a code chunk
 
