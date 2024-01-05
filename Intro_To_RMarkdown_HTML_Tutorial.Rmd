@@ -169,3 +169,10 @@ code_folding: hide
 ## Summary
 
 There are a ton of options and ways for you to customize your r code using the HTML format. This is a great way to display a "portfolio" of your work if you are trying to market yourself to interested parties.
+
+# RPUBS
+
+RPUBS is an easy web publishing platform from R
+1. Create an account
+2. Knit your code
+3. At the top right of your output HTML, click publish and follow the prompt
