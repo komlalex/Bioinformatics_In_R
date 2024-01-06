@@ -97,3 +97,19 @@ matches_day <- select(my_data, matches("day"))
 ####################################### RENAMING
 #####################################
 new_data = rename(my_data, depature_time = dep_time)
+
+
+###################################### MUTATE
+####################################
+
+# Let's add new columns to our data? We have the mutate function for that.
+
+# First let's make a smaller data frame so we can see what we're doing
+my_small_data <- select(my_data, year:day, distance, air_time)
+
+# Let's calculate the speed of the flight
+
+mutant_data <- mutate(my_small_data, speed = distance / air_time * 60 )
+
+# What if we want to create a new data frame with ONLY the calculation? (transmute)
+airspeed <- transmute(my_small_data, speed = distance / air_time * 60,  speed2 = distance / air_time, PI = 3.14)
