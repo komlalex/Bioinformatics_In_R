@@ -140,3 +140,12 @@ new_summary <- summarise(my_data, delay = mean(dep_delay))
 not_cancelled <- filter(my_data, !is.na(dep_delay), !is.na(arr_delay))
 
 summarise(not_cancelled, delay = mean(dep_delay))
+
+######################################### COUNTS
+#######################################
+
+# We can also count the number of variables that are in our dataset
+sum(is.na(my_data$dep_delay))
+
+# We can also count the numbers that are NOT NA
+sum(!is.na(my_data$dep_delay))
