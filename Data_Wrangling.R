@@ -129,3 +129,14 @@ by_day <- group_by(my_data, year, month, day)
 data_summary_by_day <- summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
 
 # As you can see, we now have the delays by the days of the year
+
+############################################ MISSING DATA
+###########################################
+
+# What happens if we don't tell R what to do with missing data
+new_summary <- summarise(my_data, delay = mean(dep_delay))
+
+# We can also filter our data based on NA
+not_cancelled <- filter(my_data, !is.na(dep_delay), !is.na(arr_delay))
+
+summarise(not_cancelled, delay = mean(dep_delay))
