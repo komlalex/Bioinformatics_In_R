@@ -149,3 +149,13 @@ sum(is.na(my_data$dep_delay))
 
 # We can also count the numbers that are NOT NA
 sum(!is.na(my_data$dep_delay))
+
+######################################### PIPING
+########################################
+
+# with tibble datasets (more on them soon), we can pipe results to get rid of the need to use $ sign
+# We can then summarize the number of flights by minutes delayed
+
+my_data %>%
+  group_by(year, month, day) %>%
+  summarise(mean = mean(dep_time, na.rm = TRUE))
