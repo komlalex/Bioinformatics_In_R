@@ -113,3 +113,19 @@ mutant_data <- mutate(my_small_data, speed = distance / air_time * 60 )
 
 # What if we want to create a new data frame with ONLY the calculation? (transmute)
 airspeed <- transmute(my_small_data, speed = distance / air_time * 60,  speed2 = distance / air_time, PI = 3.14)
+
+############################################ SUMMARIZE and by_group()
+###########################################
+
+# We can use summarize to run a function on a data column to get a single return
+data_summary <- summarise(my_data, delay = mean(dep_delay, na.rm = TRUE))
+
+# So we can see that the average delay is about 12 minutes
+
+# We gain additional value in summarize by pairing it with by_group()
+
+by_day <- group_by(my_data, year, month, day)
+
+data_summary_by_day <- summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
+
+# As you can see, we now have the delays by the days of the year
