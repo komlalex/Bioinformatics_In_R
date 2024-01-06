@@ -80,4 +80,16 @@ everythingelse <- select(my_data, -(year:day))
 
 everythingelse2 <- select(my_data, !(year:day))    
 
+# There also some other helper functions that can help you select the columns or data you desire:
 
+# starts_with("xyz") -- will select the values that start with xyz.
+days_only <- select(my_data, starts_with("day"))
+
+# ends_with("xyz)
+months_only <- select(my_data, ends_with("th"))
+
+# contains("xyz)
+contains_dep <- my_data %>% select(contains("dep"))
+
+# matches("xyz) : Matches identically value xyz
+matches_day <- select(my_data, matches("day"))
