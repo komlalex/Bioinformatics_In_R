@@ -7,6 +7,9 @@ my_data <- nycflights13::flights
 head(my_data)
 tail(my_data)
 
+######################################
+# FILTERING
+#####################################
 # First we will just look at the data on the October 14th
 
 filter(my_data, month == 10, day == 14)
@@ -46,4 +49,15 @@ March_April_Flights <- filter(my_data, (month == 3 | month == 4))
 March_April_Flights2 <- filter(my_data, month == 3 & day == 4)
 
 Non_Jan_Flights = filter(my_data, month != 1)
+
+#########################################ARRANGE
+###########################################
+
+# Arrange allows us to arrange the dataset based on the variables we desire
+arrange(my_data, year, day, month)
+
+# We can also arrange in descending fashion
+desc_data <- arrange(my_data, desc(year), desc(day), desc(month))
+
+# Missing values a always placed at the end of the data frame regardless of whether we are arranging in ascending or descending order
 
