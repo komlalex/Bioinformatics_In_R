@@ -61,3 +61,23 @@ desc_data <- arrange(my_data, desc(year), desc(day), desc(month))
 
 # Missing values a always placed at the end of the data frame regardless of whether we are arranging in ascending or descending order
 
+####################################### SELECT #################################
+
+# we can also select specific columns that we want to look at
+
+calender <- select(my_data, year, month, day)
+
+# We also look at a range of columns
+calender2 <- select(my_data, year:day)
+
+# Let's look at all columns, month through carrier
+calender3 <- select(my_data, month:carrier)
+
+# We also choose which columns not to include
+everythingelse <- select(my_data, -(year:day))
+
+# In this case, we can also use the NOT (!)  operator
+
+everythingelse2 <- select(my_data, !(year:day))    
+
+
