@@ -93,3 +93,7 @@ contains_dep <- my_data %>% select(contains("dep"))
 
 # matches("xyz) : Matches identically value xyz
 matches_day <- select(my_data, matches("day"))
+
+####################################### RENAMING
+#####################################
+new_data = rename(my_data, depature_time = dep_time)
