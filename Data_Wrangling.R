@@ -159,3 +159,38 @@ sum(!is.na(my_data$dep_delay))
 my_data %>%
   group_by(year, month, day) %>%
   summarise(mean = mean(dep_time, na.rm = TRUE))
+
+########################################### TIBBLES
+#########################################
+library(tibble)
+# Now we will take the time to explore tibbles. Tibbles are modified data frames which tweak some of the older features from frames. R is an old language, and useful things from 20 years ago are not useful anymore.
+
+as_tibble(iris)
+
+# As we can see, we have the same data frame, but we have different features.
+
+# You can also create a tibble from scratch with tibble()
+tibble(
+  x = 1:5,
+  y = 1,
+  z = x^2 + y
+)
+
+# We can also use tribble() for basic data creation
+tribble(
+  ~genea, ~geneb, ~genec,
+  #####################
+  110, 112, 114,
+  6, 5, 4
+)
+
+# Tibbles are built to not overwhelm your console when printing data, only showing the first few lines.
+
+# This is how data frames prints
+print(by_day)
+as.data.frame(by_day)
+head(by_day)
+
+nycflights13::flights %>%
+  print(n=10, width=Inf)
+
