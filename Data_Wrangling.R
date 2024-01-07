@@ -194,3 +194,33 @@ head(by_day)
 nycflights13::flights %>%
   print(n=10, width=Inf)
 
+
+########################################### SUBSETTING TIBBLES
+######################################
+
+# Subsetting tibbles is easy, similar to data.frames
+df_tibble <- tibble(nycflights13::flights)
+
+df_tibble
+
+# We can subset by column name using the $
+df_tibble$carrier
+
+# We can subset by position using [[]]
+df_tibble[[2]]
+
+# If you want to use this in a pipe, you need to use the "." placeholder
+
+df_tibble %>%
+  .$carrier
+
+# Some older functions do not like tibles. Thus you might have to convert them back to data.frames
+class(df_tibble)
+
+df_tibble2 <- as.data.frame((df_tibble))
+
+class(df_tibble2)
+
+head(df_tibble)
+
+head(df_tibble2)
