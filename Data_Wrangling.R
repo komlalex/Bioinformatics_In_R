@@ -253,3 +253,37 @@ bmi <- tibble(women)
 bmi %>%
   mutate(bmi = (703 * weight) / (height)^2)
 
+######################################### SPREADING AND GATHERING
+##############################
+
+# Sometimes, you'll find datasets that don't fit well into a tibble.
+
+# We'll use the built-in data from tidyverse for this part
+
+table4a
+
+# As ou can see from this data, we have one variable in column A (country) 
+# but columns B and C are two of the same. Thus there are two observations in each row
+
+# To fix this, we can use gather function
+
+table4a %>%
+  gather("1999", "2000", key = "year", value ="cases")
+
+# Let's look at another example
+
+table4b
+
+# As you can see, we have the same problem in 4b
+table4b %>%
+  gather("1999", "2000", key="year", value = "population")
+
+# What if we want to join these two table? We can use dplyr
+
+table4a <- table4a %>%
+  gather("1999", "2000", key ="year", value = "cases")
+
+table4b <- table4b %>%
+  gather("1999", "2000", key = "year", value = "population")
+
+left_join(table4a, table4b)
