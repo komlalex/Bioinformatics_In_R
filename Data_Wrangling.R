@@ -287,3 +287,21 @@ table4b <- table4b %>%
   gather("1999", "2000", key = "year", value = "population")
 
 left_join(table4a, table4b)
+
+#####################################
+# SPREADING
+##################################
+
+# Spreading is the opposite of gathering. Let's look at table2
+
+table2
+
+# You can see that we have redundant info in columns 1 and 2
+# We can fix that by combining rows 1&2, 3&4 etc
+
+spread(table2, key =type, value = count)
+
+# type is the key of what we are turning into columns, the value is what becomes rows
+
+# In summary, spread makes long tables shorter and wider
+# Gather makes wide tables narrower and longer.
