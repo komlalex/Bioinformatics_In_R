@@ -224,3 +224,32 @@ class(df_tibble2)
 head(df_tibble)
 
 head(df_tibble2)
+
+########################################### TIDYR
+#########################################
+
+library(tidyverse)
+
+# How do we mke a tidy dataset? Well the tidyverse follows three rules:
+
+#1 - Each variable must have its own column
+#2 - Each observation must have its own row
+#3 - Each value must have its own cell.
+
+# It is impossible to satisfy two(2) of the three(3) rules.
+
+# This leads to the following instructions for tidy data:
+
+#1 - Put each dataset into a tibble 
+#2 - Put each variable into a column
+#3 - Profit
+
+# Picking one consistent method of data storage makes for easier understanding of what is happening of your code and what is happening "under the hood" or behind the scenes
+
+# Let's now look at working with tibbles
+
+bmi <- tibble(women)
+
+bmi %>%
+  mutate(bmi = (703 * weight) / (height)^2)
+
