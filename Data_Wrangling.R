@@ -335,4 +335,14 @@ table3 %>%
       year, 
       into = c("century", "year"),        convert = TRUE,
       sep=2)
+
+######################################### UNITE
+########################################
   
+  # What happens if we want to do the opposite of separate
+table5
+
+table5 %>%
+  unite(date, century, year, sep = "", na.rm = FALSE)
+
+ 
