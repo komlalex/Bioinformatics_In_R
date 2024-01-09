@@ -305,3 +305,34 @@ spread(table2, key =type, value = count)
 
 # In summary, spread makes long tables shorter and wider
 # Gather makes wide tables narrower and longer.
+
+######################################### SEPERATING AND PULL
+########################################
+
+# Now what happens when we have two observations stuck in one column
+
+table3
+
+# As you can see, rate is just the population and cases combined
+
+table3 %>%
+  separate(rate, into = c("cases", "population"))
+
+# However, if you notice, column type is not correct
+  table3 %>%
+    separate(rate, into = c("cases", "population"), convert = TRUE)
+
+# You can specify what you want to separate based on 
+
+  table3 %>%
+    separate(rate, into = c("cases", "population"), sep="/", convert = TRUE)
+
+# Let's make this look more tidy
+
+  
+  table3 %>%
+    separate(
+      year, 
+      into = c("century", "year"),        convert = TRUE,
+      sep=2)
+  
