@@ -438,5 +438,20 @@ planes %>%
   filter(n > 1)
 
 
+################################################ MUTATE JOIN
+##############################################
 
+flights2 <- flights %>%
+  select(year:day, hour, origin, dest, tailnum, carrier)
  
+flights2
+
+flights2 %>%
+  select(-origin, -dest) %>%
+  left_join(airlines , by = "carrier")
+# We've now added the airlines names to our dataframe from the airline dataframe
+
+# Other types of join (inner_join) matches a pair of observation when their key is equal
+# Outer join (outer_join) keeps observations that appear in at  least one table
+
+
