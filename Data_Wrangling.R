@@ -345,4 +345,49 @@ table5
 table5 %>%
   unite(date, century, year, sep = "", na.rm = FALSE)
 
- 
+######################################### MISSING VALUES
+#######################################
+
+# There are two types of missing values: NA (explicit) or just no entry (implicit)
+
+gene_data <- tibble(
+  gene = c("a", "a", "a", "a", "b", "b", "b"),
+  nuc = c(20, 22, 24, 25, NA, 42, 67),
+  run = c(1,2,3,4,2,3,4)
+  
+)
+
+gene_data
+
+# The nucleotide count for gene b, run 2 is explicit missing
+# The nucleotide count for gene b run 1 is implicit.
+
+# one way we can make implicit missing values explicit is by putting runs in the column
+
+gene_data %>%
+  spread(gene, nuc)
+
+# We want to remove the missing values, we can use spread and remove, and na.rm = TRUE
+
+gene_data %>% 
+  spread(key = gene, value = nuc) %>%
+  gather(gene, nuc, "a":"b", na.rm = TRUE)
+  
+# Sometimes, an NA is present to represent a value being carried forward
+
+treatment <- tribble(
+  ~person, ~treatment, ~response,
+  ################################
+  "Isaac",  1,          7,
+  NA,       2,          10,
+  NA,       3,          9,
+  "VDB",    1,          8,
+  NA,       2,          11,
+  NA,       3,          10
+  )
+
+treatment
+
+# What we can do here is use the fill option
+treatment %>%
+  fill(person)
