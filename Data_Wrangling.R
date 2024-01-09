@@ -391,3 +391,52 @@ treatment
 # What we can do here is use the fill option
 treatment %>%
   fill(person)
+
+################################################ DPLYR
+###############################################
+
+# It is rare that you will be working with a single data table. The DYPLR package allows you to join two data tables based on common values.
+
+# Mutate joins - add new variables to one data frame from the matching observations in another
+# Filtration joins - add new variables to one data frame based on whether or not they are present in another.
+# Set operations - treats obsrvations as they are set elements
+
+library(tidyverse)
+library(nycflights13)
+
+# let's pull full carrier names based on letter codes
+airlines
+
+# let's get info about airports
+airports
+
+# Let's get info about each plane
+planes
+
+# Let's get info about the weather at the airports
+weather
+
+# Let's get info on singular flight
+flights
+
+# Let's look at how these tables connect
+
+# Flights -> planes based on tailnum
+# Flights -> airlines through carrier
+# Flights -> airports through origin AND dest
+# flights -> weather via origin, year/month/day/hour
+
+################################################ KEYS
+###############################################
+
+# Keys are unique identifiers per observation
+# Primary key uniquely identify an observation its own table
+
+# One way to identify a primary key is as follows
+planes %>%
+  count(model) %>%
+  filter(n > 1)
+
+
+
+ 
