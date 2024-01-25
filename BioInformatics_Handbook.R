@@ -232,3 +232,44 @@ str_c(str1, str2, sep = " ")
 
 str_c("x", "y", "c", sep = "_")
 
+################################################ Subsetting strings
+###############################################
+
+HSP <- c("HSP123", "HSP234", "HSP456")
+str_sub(HSP, 4,6)
+
+# This just drops the first four letters from the string
+# Or you can use negetives to count from the end
+str_sub(HSP, -3, -1)
+
+# you can convert the cases of strings like follows:
+HSP
+HSP_Lower <- str_to_lower(HSP)
+
+str_to_upper(HSP_Lower)
+
+
+################################################ Regualar Expressions
+install.packages("htmlwidgets")
+########################################
+
+x <- c("ATTAGA", "CGCCCCCGGAT", "TATTA")
+str_view(x, "TA")
+
+# The next step is , "." where the "." matches an entry
+str_view(x, ".G.")
+
+# Anchors allow you to match at the start or the ending
+str_view(x, "^TA")
+str_view(x, "TA$")
+
+# Character classes/alternatives
+#\d matches any digit
+#\s matches any space
+#[abc] matches a, b and c
+str_view(x, "TA[GT]")
+# [^anc] matches anything but, a, b, or c
+str_view(x, "TA[^T]")
+
+# You can also use the | to pick between two alternatives
+str_view(x, "TA[G|T]")
