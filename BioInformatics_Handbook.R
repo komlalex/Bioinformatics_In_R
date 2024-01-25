@@ -125,7 +125,7 @@ x <- 15+ 38
 x
 class(x)
 
-z = as.character(c(1,2,3,4,5,6))
+z <- as.character(c(1,2,3,4,5,6))
 z
 
 class(z)
@@ -195,3 +195,40 @@ dotplot(Sepal.Width ~ Sepal.Length|Species, data = iris)
 
 # Let's use the lattice dotplot to look at petal length vs width
 dotplot(Petal.Length ~ Petal.Width|Species, data = dataset)
+
+#################################
+# Stringr
+##############################
+
+library(tidyverse)
+library(stringr)
+
+# You can create strings using double or single quotes
+str1 <- "This is a string"
+str2 <- 'This is also a "string"'
+
+str2
+
+# If you forget to close the string, you get this 
+str3 <- "where is this going?"
+str3
+
+# Just hit the escape and try again
+
+# multiple strings are stored in character vectors
+str4 <- c("one", "two", "three")
+str4
+
+# measuring string length
+str_length(str3)
+str_length(str4)
+
+# Let's combine two strings
+str_c("x", "y")
+str_c(str1, str2)
+
+# You can use sep to control how they are seperated
+str_c(str1, str2, sep = " ")
+
+str_c("x", "y", "c", sep = "_")
+
