@@ -273,3 +273,19 @@ str_view(x, "TA[^T]")
 
 # You can also use the | to pick between two alternatives
 str_view(x, "TA[G|T]")
+
+################################################ Detecting Matches
+#######################################
+# str_match() returns a logical vector the same length  of input 
+y <- c("apple", "banana", "pear")
+y
+str_detect(y, "e")
+
+# How many words start with letter e
+words
+
+sum(str_detect(words, "^e"))
+
+# Let's get more complex,what proportion of words end in a vowel?
+
+mean(str_detect(words, "[aeiou]$"))
