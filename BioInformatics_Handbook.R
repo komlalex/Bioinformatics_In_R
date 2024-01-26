@@ -289,3 +289,29 @@ sum(str_detect(words, "^e"))
 # Let's get more complex,what proportion of words end in a vowel?
 
 mean(str_detect(words, "[aeiou]$"))
+
+# What proportion of words do not start with a vowel
+
+mean(str_detect(words, "^[^aeiou]"))
+
+# Lets find all the words that don't contain o or u
+no_ou <- !str_detect(words, "[ou]")
+no_ou
+
+# Now let's extract 
+words[!str_detect(words, "[ou]")]
+
+# you can also use str_count to say how many matches there are in string
+str_count(x, "[GC]")
+
+# Let's couple this with mutate
+df <- tibble(
+  word = words,
+  index = seq_along(word)
+)
+
+df
+
+df %>%
+  mutate(vowels = str_count(words, "[aeiou]"),
+  consonants = str_count(words, "[^aeiou]"))
